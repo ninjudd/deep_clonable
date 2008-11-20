@@ -1,9 +1,9 @@
 = DeepClonable
 
-DeepClonable is an extension that add deep clone support to any Class. Just call
+DeepClonable is an extension that adds deep clone support to any Class. Just call
 deep_clonable in the class definition. You can also define special behavior when cloning
-by overriding the clone_fields method. By default, all Arrays and Hashes will be deep
-cloned.
+by overriding the clone_fields method if you want, but by default, all Arrays and Hashes
+will be deep cloned.
 
 == INSTALL:
 
