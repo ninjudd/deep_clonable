@@ -6,7 +6,7 @@ class Class
 end
 
 module DeepClonable
-  VERSION = '1.0.0'
+  VERSION = '1.0.1'
 
   module InstanceMethods
     def clone
@@ -20,13 +20,13 @@ module DeepClonable
       cloned_object.clone_fields
       cloned_object
     end
-    
+
     # You can override clone_fields in your class to do deep clone in place.
     # As it is, all Arrays and Hashes are deep cloned.
     def clone_fields
       instance_variables.each do |variable|
         value = instance_variable_get(variable)
-        if value.kind_of?(Array) or value.kind_of?(Hash)
+        if value.kind_of?(Array) or value.kind_of?(Hash) or value.kind_of?(DeepClonable::InstanceMethods)
           instance_variable_set(variable, value.clone)
         end
       end
