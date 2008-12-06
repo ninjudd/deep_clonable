@@ -42,6 +42,7 @@ module DeepClonable
     # that part is important) and specify the cloning versions by name
     # using this method.
     def clone_method(clone_method_name, method_name = nil)
+      clone_method_name = clone_method_name.to_s.gsub(/\!$/,'')
       method_name ||= "#{clone_method_name}!"
       class_eval %{
         def #{clone_method_name}(*args)
