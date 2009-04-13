@@ -1,7 +1,0 @@
-History.txt
-Manifest.txt
-README.txt
-Rakefile
-bin/deep_clonable
-lib/deep_clonable.rb
-test/test_deep_clonable.rb

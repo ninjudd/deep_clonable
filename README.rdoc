@@ -1,0 +1,47 @@
+= DeepClonable
+
+DeepClonable is an extension that adds deep clone support to any Class. Just call
+deep_clonable in the class definition. You can also define special behavior when cloning
+by overriding the clone_fields method if you want, but by default, all Arrays and Hashes
+will be deep cloned.
+
+== INSTALL:
+
+  sudo gem install deep_clonable
+
+== USAGE:
+
+  class Foo
+    deep_clonable
+    
+    attr_reader :array
+    
+    def initialize(array)
+      @array = array
+    end
+    
+    def clone_fields
+      # Only deep clone a single variable, all other variables will be just be copied directly.
+      @array = @array.clone
+    end
+  end
+
+  foo = Foo.new([1,2,3])
+  bar = Foo.clone
+
+  foo.array
+  # => [1,2,3]
+
+  bar.array
+  # => [1,2,3]
+
+  bar.array << 4
+  bar.array
+  # => [1,2,3,4]
+
+  foo.array
+  # => [1,2,3]
+
+== LICENSE:
+
+Copyright (c) 2008 Justin Balthrop, Geni.com; Published under The MIT License, see LICENSE
