@@ -5,11 +5,7 @@ deep_clonable in the class definition. You can also define special behavior when
 by overriding the clone_fields method if you want, but by default, all Arrays and Hashes
 will be deep cloned.
 
-== INSTALL:
-
-  sudo gem install ninjudd-deep_clonable -s http://gems.github.com
-
-== USAGE:
+== Usage:
 
   class Foo
     deep_clonable
@@ -42,6 +38,10 @@ will be deep cloned.
   foo.array
   # => [1,2,3]
 
-== LICENSE:
+== Install:
+
+  sudo gem install ninjudd-deep_clonable -s http://gems.github.com
+
+== License:
 
 Copyright (c) 2008 Justin Balthrop, Geni.com; Published under The MIT License, see LICENSE
