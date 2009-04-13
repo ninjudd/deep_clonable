@@ -7,7 +7,7 @@ will be deep cloned.
 
 == INSTALL:
 
-  sudo gem install deep_clonable
+  sudo gem install ninjudd-deep_clonable -s http://gems.github.com
 
 == USAGE:
 
