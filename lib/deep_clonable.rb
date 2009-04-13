@@ -6,8 +6,6 @@ class Class
 end
 
 module DeepClonable
-  VERSION = '1.0.1'
-
   module InstanceMethods
     def clone
       cloned_object = super
