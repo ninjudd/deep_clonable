@@ -8,22 +8,22 @@ end
 module DeepClonable
   module InstanceMethods
     def clone
-      was_frozen = frozen?
-      cloned_object = super.dup
-      cloned_object = yield(cloned_object) if block_given?
-      was_frozen ? cloned_object.freeze : cloned_object
+      cloned_object = dup
+      yield(cloned_object) if block_given?
+      frozen? ? cloned_object.freeze : cloned_object
     end
 
-    def dup(method = :dup)
+    def dup
       cloned_object = super()
-      cloned_object.update_vars(deep_vars, method)
+      cloned_object.update_vars(deep_vars, :dup)
       cloned_object
     end
 
     alias old_freeze freeze
 
     def freeze
-      dup(:freeze).old_freeze
+      update_vars(deep_vars, :freeze)
+      old_freeze
     end
 
     # You can override deep_vars in your class to specify which instance_variables should be deep cloned.

@@ -27,7 +27,7 @@ class TestClass
 end
 
 class DeepClonableTest < Test::Unit::TestCase
-  should "clone method" do
+  should 'clone method' do
     a = TestClass.new(10, {:a => 1}, [1,2,3])
     b = a.invert
 
@@ -58,7 +58,7 @@ class DeepClonableTest < Test::Unit::TestCase
     assert_equal([1,2,3],            c.array)
   end
 
-  should "return a frozen object when cloning a frozen object" do
+  should 'return a frozen object when cloning a frozen object' do
     a = TestClass.new(10, {:a => 1}, [1,2,3]).freeze
 
     assert_raises(TypeError) do
@@ -80,7 +80,7 @@ class DeepClonableTest < Test::Unit::TestCase
     assert a.clone.frozen?
   end
 
-  should "unfreeze an object when duping" do
+  should 'unfreeze an object when duping' do
     a = TestClass.new(10, {:a => 1}, [1,2,3]).freeze
     b = a.dup
 
