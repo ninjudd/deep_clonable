@@ -9,6 +9,7 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Add support for deep cloning to objects}
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/ninjudd/deep_clonable"
+  gem.license       = 'MIT'
 
   gem.add_development_dependency 'shoulda', '3.0.1'
   gem.add_development_dependency 'mocha'
